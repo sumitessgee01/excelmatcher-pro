@@ -1,0 +1,170 @@
+╔═══════════════════════════════════════════════════════════════════════════════╗
+║           IF YOU UPDATE CODE - FOLLOW THESE 8 STEPS TO RELEASE               ║
+╚═══════════════════════════════════════════════════════════════════════════════╝
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ STEP 1: EDIT YOUR CODE                                                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Edit any files:
+  • src/*.jsx          (Frontend/React)
+  • backend/*.py       (Backend/Python)
+  • electron/*.js      (Desktop app)
+
+Example: Fix a bug or add a new feature
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ STEP 2: TEST LOCALLY (Before Building)                                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Run development mode:
+  npm run electron:dev
+
+This starts:
+  ✓ Frontend dev server (auto-updates as you edit)
+  ✓ Python backend
+  ✓ Electron app
+
+Test your changes here!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ STEP 3: UPDATE VERSION NUMBER                                            ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Edit: package.json
+
+Change from:
+  "version": "1.0.0"
+
+To (pick one):
+  "version": "1.0.1"  ← Bug fix
+  "version": "1.1.0"  ← New feature
+  "version": "2.0.0"  ← Major change
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ STEP 4: BUILD NEW INSTALLER                                              ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Option A - EASIEST:
+  Double-click: BUILD.bat
+  Wait 5-10 minutes...
+
+Option B - Manual:
+  cd "f:\Data Mather Projects\Data project 2\excelmatcher-pro"
+  npm run build
+  npm run electron:build
+
+Result:
+  📦 release/FileMatcher-1.0.1-win-x64.exe ← NEW INSTALLER!
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ STEP 5: TEST NEW BUILD                                                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Test installer locally:
+  1. Double-click: release/FileMatcher-1.0.1-win-x64.exe
+  2. Go through installation
+  3. Run app and verify your changes work
+  4. Uninstall if testing (Control Panel → Uninstall)
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ STEP 6: COMMIT TO GIT                                                    ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Commit your changes:
+  cd "f:\Data Mather Projects\Data project 2\excelmatcher-pro"
+  git add .
+  git commit -m "fix: description of what you changed"
+  git push
+
+Example messages:
+  git commit -m "fix: resolved data matching bug"
+  git commit -m "feat: added user authentication"
+  git commit -m "perf: optimized backend processing"
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ STEP 7: CREATE GITHUB RELEASE                                            ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Go to GitHub:
+  https://github.com/sumitessgee01/excelmatcher-pro/releases
+
+Click: "Create a new release"
+
+Fill in:
+  Tag version:    v1.0.1
+  Release title:  FileMatcher v1.0.1
+  Description:    Write what changed
+  
+  Example:
+    ✓ Fixed data matching algorithm
+    ✓ Improved performance by 30%
+    ✓ Added new export formats
+
+Upload file:
+  Click "Attach binaries"
+  Select: release/FileMatcher-1.0.1-win-x64.exe
+
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ STEP 8: PUBLISH RELEASE                                                  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+Click: "Publish release"
+
+✨ DONE! USERS GET AUTO-UPDATE NOTIFICATION! ✨
+
+When users open FileMatcher:
+  1. App checks for updates
+  2. Finds v1.0.1 available
+  3. Shows: "Update available"
+  4. User clicks "Restart Now"
+  5. App downloads and installs update
+  6. App restarts with new version
+  7. No more bug! Feature works!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚡ QUICK COMMAND - Do This:
+
+  1. Edit your code
+  2. npm run electron:dev (test)
+  3. Update version in package.json
+  4. Double-click BUILD.bat
+  5. Test: Double-click new installer
+  6. git add . && git commit -m "fix: description" && git push
+  7. GitHub release → Upload installer → Publish
+  8. Done! Users get auto-update!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⏱️ TIME REQUIRED:
+
+  Editing code:           5-60 minutes (depends on change)
+  Testing locally:        5 minutes
+  Building:               5-10 minutes
+  Testing build:          5 minutes
+  Git commit:             2 minutes
+  GitHub release:         5 minutes
+  
+  TOTAL:                  30-90 minutes
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ COMPLETE CHECKLIST FOR EVERY UPDATE:
+
+  ☑ Edit code
+  ☑ Test with: npm run electron:dev
+  ☑ Update version in package.json
+  ☑ Run: BUILD.bat (or npm commands)
+  ☑ Test new installer
+  ☑ git add . && git commit && git push
+  ☑ Create GitHub Release
+  ☑ Upload installer file
+  ☑ Publish release
+  ☑ Users get auto-update notification!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 FULL GUIDE: Read CODE_UPDATE_WORKFLOW.md for detailed examples
+
+═══════════════════════════════════════════════════════════════════════════════
