@@ -39,6 +39,6 @@ nsis:
 
 publish:
   provider: github
-  owner: "${GITHUB_OWNER}"
-  repo: "${GITHUB_REPO}"
+  owner: sumitessgee01
+  repo: excelmatcher-pro
   releaseType: release
