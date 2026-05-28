@@ -1,0 +1,44 @@
+appId: com.essgee.filematcher
+productName: FileMatcher
+artifactName: FileMatcher-${version}-${os}-${arch}.${ext}
+
+directories:
+  output: release
+  buildResources: build
+
+files:
+  - dist/**/*
+  - electron/**/*
+  - package.json
+
+extraResources:
+  - from: backend/dist
+    to: backend
+    filter:
+      - server.exe
+  - from: backend/ai_models
+    to: backend/ai_models
+  - from: backend/requirements.txt
+    to: backend/requirements.txt
+
+win:
+  icon: build/icon.ico
+  signAndEditExecutable: false
+  target:
+    - target: nsis
+      arch:
+        - x64
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: FileMatcher
+
+publish:
+  provider: github
+  owner: "${GITHUB_OWNER}"
+  repo: "${GITHUB_REPO}"
+  releaseType: release

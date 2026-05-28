@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+*.npm
+*.pnp
+.pnp.js
+
+# Build
+dist/
+release/
+build/
+
+# Python backend
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.Python
+backend/__pycache__/
+backend/.local_data/
+backend/dist/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Testing
+.nyc_output/
+coverage/
+
+# Misc
+.cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Large files
+*.db
+data/learning.db
+data/master_mappings.json
